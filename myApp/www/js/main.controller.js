@@ -10,14 +10,14 @@ angular.module('SimpleRESTIonic.controllers', [])
     var vm = this;
 
     vm.create = function (object) {
-      console.log('create');
       SessionService.create(object)
-        .then(function () {
-          listSessions();
+        .then(function (data) {
+          var sessionId = data.data.__metadata.id;
+          redirect(sessionId);
         });
     }
-    function listSessions(){
-      $location.path('/main/join');
+    function redirect(id) {
+      $location.path('/conductor/' + id);
     }
     vm.cancelCreate = function() {
       $location.path('/main/home');
@@ -25,6 +25,13 @@ angular.module('SimpleRESTIonic.controllers', [])
   })
   .controller('JoinCtrl', function ($rootScope, sessions) {
     var vm = this;
-    console.log(sessions);
     vm.sessions = sessions.data.data;
+  })
+  .controller('ConductorCtrl', function ($rootScope, session) {
+    var vm = this;
+    vm.session = session;
+  })
+  .controller('ChoirCtrl', function ($rootScope, session) {
+    var vm = this;
+    vm.session = session;
   });

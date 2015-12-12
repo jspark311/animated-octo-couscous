@@ -1,4 +1,4 @@
-<ion-view view-title="Login">
+<ion-view view-title="Join a Choir">
   <ion-content class="padding has-header">
     <!-- LIST -->
     <div class="bar bar-subheader">
@@ -6,7 +6,9 @@
            ng-class="{'active':joinVM.isCurrent(session.id)}">
         <div class="item item-icon-right item-icon-left cust-item">
           <h2 class="text-center">{{session.name}}</h2>
-          <i class="icon ion-log-in" ng-click="joinVM.join(session.id)"></i>
+          <a ui-sref="choir({ id: session.id })">
+            <i class="icon ion-log-in"></i>
+          </a>
         </div>
         <div class="item item-body text-center">
           {{session.description}}
