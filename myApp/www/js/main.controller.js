@@ -27,4 +27,9 @@ angular.module('SimpleRESTIonic.controllers', [])
     var vm = this;
     console.log(sessions);
     vm.sessions = sessions.data.data;
+  })
+  .controller('ChoirCtrl', function ($rootScope, session) {
+    var vm = this;
+
+    console.log(session)
   });

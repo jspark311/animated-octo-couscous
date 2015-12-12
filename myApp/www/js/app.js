@@ -64,7 +64,17 @@ angular.module('SimpleRESTIonic', ['ionic', 'backand', 'SimpleRESTIonic.controll
                   return SessionService.all();
                 }
               }
-            });
+            })
+          .state('choir', {
+            url: '/choir/:id',
+            templateUrl: 'templates/choir.html',
+            controller: 'ChoirCtrl as choirVM',
+            resolve: {
+              session: function(SessionService, $stateParams) {
+                return SessionService.fetch($stateParams.id);
+              }
+            }
+          });
 
         $urlRouterProvider.otherwise('/main/home');
 
