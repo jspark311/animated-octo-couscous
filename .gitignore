@@ -45,5 +45,5 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 ./node_modules
-./myApp/lib
+./myApp/www/lib
 ./myApp/node_modules
