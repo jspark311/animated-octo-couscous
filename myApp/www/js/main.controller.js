@@ -27,9 +27,24 @@ angular.module('SimpleRESTIonic.controllers', [])
     var vm = this;
     vm.sessions = sessions.data.data;
   })
-  .controller('ConductorCtrl', function ($rootScope, session) {
+  .controller('ConductorCtrl', function ($rootScope, session, SessionService) {
     var vm = this;
     vm.session = session;
+
+    vm.colors = [
+      { id: 1, name:'Red' },
+      { id: 2, name:'Blue' },
+      { id: 3, name:'Green' }
+    ];
+
+    vm.update = function() {
+      session.data.color = vm.color;
+      SessionService.update(session.data.id, session.data)
+        .then(function(res) {
+          //console.log(res)
+        });
+    };
+
   })
   .controller('ChoirCtrl', function ($rootScope, session) {
     var vm = this;

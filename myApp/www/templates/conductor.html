@@ -1,5 +1,15 @@
 <ion-view view-title="Conduct your Choir">
   <ion-content class="padding has-header">
-    <a href="" class="button button-full button-positive" ng-click="">Start</a>
+    <div class="list">
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Color
+        </div>
+        <select ng-options="color.name as color.name for color in conductorVM.colors"
+                ng-model="conductorVM.color" ng-change="conductorVM.update()"></select>
+      </label>
+
+    </div>
   </ion-content>
 </ion-view>
