@@ -65,6 +65,16 @@ angular.module('SimpleRESTIonic', ['ionic', 'backand', 'SimpleRESTIonic.controll
                 }
               }
             })
+          .state('conductor', {
+            url: '/conductor/:id',
+            templateUrl: 'templates/conductor.html',
+            controller: 'ConductorCtrl as conductorVM',
+            resolve: {
+              session: function(SessionService, $stateParams) {
+                return SessionService.fetch($stateParams.id);
+              }
+            }
+          })
           .state('choir', {
             url: '/choir/:id',
             templateUrl: 'templates/choir.html',
