@@ -58,37 +58,42 @@ angular.module('SimpleRESTIonic', ['ionic', 'backand', 'SimpleRESTIonic.controll
                   templateUrl: 'templates/main-join.html',
                   controller: 'JoinCtrl as joinVM'
                 }
+              },
+              resolve: {
+                sessions: function(SessionService) {
+                  return SessionService.all();
+                }
               }
             });
 
         $urlRouterProvider.otherwise('/main/home');
 
-        $httpProvider.interceptors.push('APIInterceptor');
+        //$httpProvider.interceptors.push('APIInterceptor');
     })
 
-    .run(function ($rootScope, $state, LoginService, Backand) {
-
-        function unauthorized() {
-            console.log("user is unauthorized, sending to login");
-            $state.go('tab.login');
-        }
-
-        function signout() {
-            LoginService.signout();
-        }
-
-        $rootScope.$on('unauthorized', function () {
-            unauthorized();
-        });
-
-        $rootScope.$on('$stateChangeSuccess', function (event, toState) {
-            if (toState.name == 'tab.login') {
-                signout();
-            }
-            else if (toState.name != 'tab.login' && Backand.getToken() === undefined) {
-                unauthorized();
-            }
-        });
-
-    })
+    //.run(function ($rootScope, $state, LoginService, Backand) {
+    //
+    //    function unauthorized() {
+    //        console.log("user is unauthorized, sending to login");
+    //        $state.go('tab.login');
+    //    }
+    //
+    //    function signout() {
+    //        LoginService.signout();
+    //    }
+    //
+    //    $rootScope.$on('unauthorized', function () {
+    //        unauthorized();
+    //    });
+    //
+    //    $rootScope.$on('$stateChangeSuccess', function (event, toState) {
+    //        if (toState.name == 'tab.login') {
+    //            signout();
+    //        }
+    //        else if (toState.name != 'tab.login' && Backand.getToken() === undefined) {
+    //            unauthorized();
+    //        }
+    //    });
+    //
+    //})
 

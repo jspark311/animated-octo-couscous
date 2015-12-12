@@ -8,5 +8,8 @@ angular.module('SimpleRESTIonic.controllers', [])
   })
   .controller('CreateCtrl', function ($rootScope) {
   })
-  .controller('JoinCtrl', function ($rootScope) {
+  .controller('JoinCtrl', function ($rootScope, sessions) {
+    var vm = this;
+
+    vm.sessions = sessions.data.data;
   });

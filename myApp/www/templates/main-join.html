@@ -1,5 +1,17 @@
 <ion-view view-title="Login">
   <ion-content class="padding has-header">
-    <h1>Join</h1>
+    <!-- LIST -->
+    <div class="bar bar-subheader">
+      <div class="list card" ng-repeat="session in joinVM.sessions"
+           ng-class="{'active':joinVM.isCurrent(session.id)}">
+        <div class="item item-icon-right item-icon-left cust-item">
+          <h2 class="text-center">{{session.name}}</h2>
+          <i class="icon ion-log-in" ng-click="joinVM.join(session.id)"></i>
+        </div>
+        <div class="item item-body text-center">
+          {{session.description}}
+        </div>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
