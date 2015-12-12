@@ -19,3 +19,8 @@
 .item-icon-left .icon, .item-icon-right .icon {
 	font-size: 22px;
 }
+.color-container {
+	width: 500px;
+	height: 800px;
+	background: green;
+}
