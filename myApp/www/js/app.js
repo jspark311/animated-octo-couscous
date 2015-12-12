@@ -28,31 +28,40 @@ angular.module('SimpleRESTIonic', ['ionic', 'backand', 'SimpleRESTIonic.controll
 
         $stateProvider
             // setup an abstract state for the tabs directive
-            .state('tab', {
-                url: '/tabs',
+            .state('main', {
+                url: '/main',
                 abstract: true,
-                templateUrl: 'templates/tabs.html'
+                templateUrl: 'templates/main.html'
             })
-            .state('tab.dashboard', {
-                url: '/dashboard',
+            .state('main.home', {
+                url: '/home',
                 views: {
-                    'tab-dashboard': {
-                        templateUrl: 'templates/tab-dashboard.html',
-                        controller: 'DashboardCtrl as vm'
+                    'main-home': {
+                        templateUrl: 'templates/main-home.html',
+                        controller: 'HomeCtrl as homeVM'
                     }
                 }
             })
-            .state('tab.login', {
-                url: '/login',
+            .state('main.create', {
+                url: '/create',
                 views: {
-                    'tab-login': {
-                        templateUrl: 'templates/tab-login.html',
-                        controller: 'LoginCtrl as login'
+                    'main-create': {
+                        templateUrl: 'templates/main-create.html',
+                        controller: 'CreateCtrl as createVM'
                     }
                 }
+            })
+            .state('main.join', {
+              url: '/join',
+              views: {
+                'main-join': {
+                  templateUrl: 'templates/main-join.html',
+                  controller: 'JoinCtrl as joinVM'
+                }
+              }
             });
 
-        $urlRouterProvider.otherwise('/tabs/dashboard');
+        $urlRouterProvider.otherwise('/main/home');
 
         $httpProvider.interceptors.push('APIInterceptor');
     })
