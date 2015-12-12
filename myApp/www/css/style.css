@@ -20,7 +20,29 @@
 	font-size: 22px;
 }
 .color-container {
-	width: 500px;
-	height: 800px;
-	background: green;
+  width: 500px;
+  height: 800px;
+  background: green;
+}
+.choir-container{
+  min-height: 25em;
+}
+
+.green{
+  background-color: green;
+}
+.red{
+  background-color: red;
+}
+.white{
+  background-color: white;
+}
+.lights{
+  background: url("");
+}
+.santa {
+  background: url("");
+}
+.christmas-bush{
+  background: url("");
 }

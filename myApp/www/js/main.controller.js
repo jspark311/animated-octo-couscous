@@ -46,7 +46,16 @@ angular.module('SimpleRESTIonic.controllers', [])
     };
 
   })
-  .controller('ChoirCtrl', function ($rootScope, session) {
+  .controller('ChoirCtrl', function ($rootScope, session, $location, Backand) {
     var vm = this;
+
+    vm.goHome = function(){
+      $location.path('/main/home');
+    };
+    Backand.on('color_updated', function(data){
+        if (data[0].Value === session.data.id) {
+          vm.className = data[3].Value.toLowerCase();
+        }
+    });
     vm.session = session;
   });

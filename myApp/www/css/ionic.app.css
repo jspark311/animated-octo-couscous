@@ -9731,5 +9731,5 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-.cust-item {
-  background-color: red !important; }
+.choir-container {
+  min-height: 25em; }
