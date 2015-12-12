@@ -28,21 +28,15 @@
   min-height: 25em;
 }
 
-.green{
-  background-color: green;
+.green {
+  background: green url("../img/santa_hat.png") no-repeat center;
+  background-size: contain;
 }
-.red{
-  background-color: red;
+.red {
+  background: red url("../img/elf.png") no-repeat center;
+  background-size: contain;
 }
-.white{
-  background-color: white;
-}
-.lights{
-  background: url("");
-}
-.santa {
-  background: url("");
-}
-.christmas-bush{
-  background: url("");
+.white {
+  background: white url("../img/green_ornament.png") no-repeat center;
+  background-size: contain;
 }
