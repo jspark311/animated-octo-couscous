@@ -21,7 +21,7 @@ angular.module('SimpleRESTIonic', ['ionic', 'backand', 'SimpleRESTIonic.controll
         });
     })
     .config(function (BackandProvider, $stateProvider, $urlRouterProvider, $httpProvider) {
-
+	BackandProvider.runSocket(true);
         BackandProvider.setAppName('animatedoctocouscous'); // change here to your app name
         BackandProvider.setSignUpToken('9f12b8da-0882-4347-a6bf-72728634295f'); //token that enable sign up. see http://docs.backand.com/en/latest/apidocs/security/index.html#sign-up
         BackandProvider.setAnonymousToken('aa863ba0-7be9-4b73-8862-6bb69d10a113'); // token is for anonymous login. see http://docs.backand.com/en/latest/apidocs/security/index.html#anonymous-access
