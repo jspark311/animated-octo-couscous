@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/edgilmore/animated-octo-couscous/issues"
   },
-  "homepage": "https://github.com/edgilmore/animated-octo-couscous#readme"
+  "homepage": "https://github.com/edgilmore/animated-octo-couscous#readme",
+  "dependencies": {
+    "bower": "^1.7.1",
+    "gulp": "^3.9.0",
+    "ionic": "^1.7.11"
+  }
 }
