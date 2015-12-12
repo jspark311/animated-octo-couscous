@@ -47,3 +47,4 @@ crashlytics-build.properties
 ./node_modules
 ./myApp/www/lib
 ./myApp/node_modules
+./myApp/www/.DS_Store
