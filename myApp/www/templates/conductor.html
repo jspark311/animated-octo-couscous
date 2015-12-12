@@ -10,6 +10,17 @@
                 ng-model="conductorVM.color" ng-change="conductorVM.update()"></select>
       </label>
 
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Carol
+        </div>
+        <select ng-options="song.url as song.title for song in conductorVM.songs"
+                ng-model="conductorVM.song" ng-change="conductorVM.updateSong()"></select>
+      </label>
+
+      <button class="button button-full button-positive" ng-click="conductorVM.play()">Play</button>
+      <button class="button button-full button-positive" ng-click="conductorVM.pause()">Pause</button>
+
     </div>
   </ion-content>
 </ion-view>

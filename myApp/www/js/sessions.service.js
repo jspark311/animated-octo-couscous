@@ -36,7 +36,4 @@ angular.module('SimpleRESTIonic.services', [])
       return $http.delete(getUrlForId(id));
     };
 
-    Backand.on('color_updated', function (data) {
-      console.log('Color changed: ' + JSON.stringify(data, null, 2));
-    });
   });
