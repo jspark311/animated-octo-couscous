@@ -79,7 +79,7 @@ angular.module('SimpleRESTIonic.controllers', [])
     }
 
   })
-  .controller('ChoirCtrl', function ($rootScope, session, $location, Backand) {
+  .controller('ChoirCtrl', function ($rootScope, session, $location, Backand, audio) {
     var vm = this;
     var context = new AudioContext();
 
@@ -90,6 +90,11 @@ angular.module('SimpleRESTIonic.controllers', [])
       console.log(data)
         if (data[0].Value === session.data.id) {
           vm.className = data[3].Value.toLowerCase();
+          if(data[4].Value) {
+            audio.play(data[5].Value);
+          } else if(!data[4].Value) {
+            audio.pause();
+          }
         }
 
     });

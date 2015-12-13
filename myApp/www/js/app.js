@@ -20,6 +20,23 @@ angular.module('SimpleRESTIonic', ['ionic', 'backand', 'SimpleRESTIonic.controll
             }
         });
     })
+    .factory('audio',function ($document) {
+      var audioElement = $document[0].createElement('audio'); // <-- Magic trick here
+      return {
+        audioElement: audioElement,
+
+        play: function(filename) {
+          audioElement.src = filename;
+          audioElement.play();     //  <-- Thats all you need
+        },
+        pause: function() {
+          audioElement.pause();
+        }
+        // Exersise for the reader - extend this service to include other functions
+        // like pausing, etc, etc.
+
+      }
+    })
     .config(function (BackandProvider, $stateProvider, $urlRouterProvider, $httpProvider) {
 	      BackandProvider.runSocket(true);
         BackandProvider.setAppName('animatedoctocouscous'); // change here to your app name
